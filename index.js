@@ -96,7 +96,7 @@ function writeToFile(fileName, data) {
             }
             resolve ({
                 ok: true,
-                message: 'README file created!'
+                message: 'README file generated!'
             });
         });
     });
@@ -110,5 +110,14 @@ function init() {
 // Function call to initialize app
 init()
     .then(readmeData => {
-        console.log(readmeData)
+        return generateMarkdown(readmeData);
+    })
+    .then(markdownData => {
+        return writeToFile('./dist/README.md', markdownData);
+    })
+    .then (writeToFileResponse => {
+        console.log(writeToFileResponse.message);
+    })
+    .catch(err => {
+        console.log(err);
     });
