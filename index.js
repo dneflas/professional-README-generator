@@ -34,23 +34,55 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the steps required to install your project?'
+        message: 'What are the steps required to install your project?',
+        validate: installationInput => {
+            if (installationInput){
+                return true;
+            } else {
+                console.log('Please enter installation instructions!');
+                return false;
+            }
+        }
 
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'Provide instructions and examples for use.'
+        message: 'Provide instructions and examples for use.',
+        validate: usageInput => {
+            if (usageInput){
+                return true;
+            } else {
+                console.log('Please provide instructions for use!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'contributing',
-        message: 'What are the contribution guidelines?'
+        message: 'What are the contribution guidelines?',
+        validate: contributingInput => {
+            if (contributingInput) {
+                return true;
+            } else {
+                console.log('Please enter contributing guidelines!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Provide examples of how to run tests.'
+        message: 'Provide examples of how to run tests.',
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('Please provide examples of how to run tests!');
+                return false;
+            }
+        }
     },
     {
         type: 'list',
