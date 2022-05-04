@@ -7,6 +7,32 @@ const generateMarkdown = require('./utils/generateMarkdown');
 const questions = [
     {
         type: 'input',
+        name: 'github',
+        message: "What is your GitHub username?",
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter your Github username!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Please enter your email address!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
         name: 'title',
         message: 'What is the title of your project?',
         validate: titleInput => {
@@ -21,7 +47,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: '',
+        message: 'Please write a description of your project.',
         validate: descriptionInput => {
             if (descriptionInput){
                 return true;
@@ -34,12 +60,12 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the steps required to install your project?',
+        message: 'What command should be run to install dependencies?',
         validate: installationInput => {
             if (installationInput){
                 return true;
             } else {
-                console.log('Please enter installation instructions!');
+                console.log('Please enter command to install dependencies');
                 return false;
             }
         }
@@ -74,12 +100,12 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Provide examples of how to run tests.',
+        message: 'What command should be run to run tests.',
         validate: testsInput => {
             if (testsInput) {
                 return true;
             } else {
-                console.log('Please provide examples of how to run tests!');
+                console.log('Please enter a command to run tests!');
                 return false;
             }
         }
@@ -88,33 +114,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Select a license for your project.',
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'The Unlicense'],
-    },
-    {
-        type: 'input',
-        name: 'github',
-        message: "What is your GitHub username?",
-        validate: githubInput => {
-            if (githubInput) {
-                return true;
-            } else {
-                console.log('Please enter your Github username!');
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: 'What is your email address?',
-        validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log('Please enter your email address!');
-                return false;
-            }
-        }
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'The Unlicense', 'None'],
     }
 ];
 
