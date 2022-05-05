@@ -46,15 +46,14 @@ function renderLicenseSection(license) {
   return `## License 
 
   This project is licensed under the [${license} License](${renderLicenseLink(license)}).  
-  
+  </br>
   `;
   // This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `
-# ${data.title}
+  return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}  
   
@@ -76,7 +75,9 @@ function generateMarkdown(data) {
   ## Installation
 
   Use the following command to download dependencies for the project:  
-      <code>   ${data.installation} </code>  
+  ~~~
+  ${data.installation}
+  ~~~
   <br>
 
   ## Usage
@@ -93,13 +94,15 @@ ${renderLicenseSection(data.license)}
   ## Tests
 
   Using the following command to run tests:  
-      <code>  ${data.tests} </code>  
+  ~~~
+  ${data.tests}
+  ~~~
   <br>
-  
+
   ## Questions
 
-  [GitHub](https://github.com/${data.username})  
-  Contact ${data.email} with any additional questions or comments.  
+  [GitHub](https://github.com/${data.github})  
+  Contact <${data.email}> with any additional questions or comments.  
 `;
 }
 
