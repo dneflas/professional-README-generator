@@ -1,7 +1,9 @@
 # Professional README Generator
+
   
   ![license badge](https://img.shields.io/badge/license-MIT-blue)
     
+  
   ## Description
 
   The Professional README Generator is a command line application that dynamically generates a README.md file using user input. The technologies used in this application include: Javascript, Node.js, and the NPM Inquirer package.  
@@ -27,9 +29,7 @@
 
   ## Usage
 
-  From the root menu, call node index.js from the command line. Follow and answer the prompts. A README.md file will be generated in the 'dist' folder. 
-  <br>
-  [Example Video](https://drive.google.com/file/d/1jg27F4x5e2qI7jENfemRCS1kfJc3tH_M/view).
+  From the root menu, call node index.js from the command line. Follow and answer the prompts. A README.md file will be generated in the 'dist' folder.  
   <br>
 
 ## License 
@@ -53,3 +53,4 @@
   ## Questions
 
   [GitHub](https://github.com/dneflas)  
+  Contact <awesome@sauce.com> with any additional questions or comments.  
